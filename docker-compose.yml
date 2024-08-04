@@ -1,0 +1,17 @@
+services:
+  db:
+    name: db_pgsql
+    image: postgres:latest
+    container_name: pgsql_container
+    environment:
+      POSTGRES_DB: admin
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+
